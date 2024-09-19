@@ -1,0 +1,61 @@
+---
+title: "Managing your organization"
+date: last-modified
+listing:
+  - id: guides-onboarding
+    type: grid
+    max-description-length: 250
+    grid-columns: 3
+    sort: false
+    fields: [title, description]
+    contents:
+    - set-up-your-organization.qmd
+    - configure-aws-privatelink.qmd
+    - configure-google-private-service-connect.qmd
+---
+
+Access to the {{< var validmind.platform >}} is associated with an organization, which encompasses all your users, groups, and business units. As a user, you can belong to multiple organizations.
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+
+:::
+
+## Switch between organizations
+
+You will see the option to switch between organizations only if you belong to more than one organization:
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under Workplace Settings, select **{{< fa building-columns >}} Organization**.
+
+3. Under **Organization**, select the organization you'd like to switch to.
+
+    - Once selected, this will become your active organization. 
+    - Your active organization is displayed under your name and roles in the left sidebar.
+
+## Change organization name
+
+::: {.callout title="To change your organization's name, you must have sufficient organization permissions."}
+By default, the `Customer Admin` role has these permissions.[^1]
+:::
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under Workplace Settings, select **{{< fa building-columns >}} Organization**.
+
+3. Under **Organization Name**, type in your new name and click **Update** to save your changes.
+
+## What's next
+
+:::{#guides-onboarding}
+:::
+
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Manage permissions](/guide/configuration/manage-permissions.qmd)

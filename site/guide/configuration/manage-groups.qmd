@@ -1,0 +1,84 @@
+---
+title: "Manage groups"
+---
+
+Groups are segments of users with the ability to view models associated with that group. Access to granular features in the {{< var validmind.platform >}} within a group's set of models is further defined by roles and permissions.
+
+::: {.callout}
+Users must belong to a default group of `All`, and can belong to mulitple groups.
+:::
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] You are a `Customer Admin` or assigned another role with sufficient permissions to perform the tasks in this guide.[^1] 
+
+:::
+
+## See group details
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under **User Permissions** in the sidebar, select **{{< fa users >}} Groups**. 
+
+3. Groups are listed with their names and any provided descriptions. 
+
+   Expand **See Details {{< fa chevron-right >}}** to:
+      - View the complete list of members in any group.
+      - View models visible to the group.
+
+## Add new groups
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+{{< include _manage-groups-add.qmd >}}
+
+## Remove groups
+:::{.callout}
+You can only remove non-default groups.
+:::
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under User Permissions, select **{{< fa users >}} Groups**.
+
+3. Expand **See Details >** for the group you want to remove.
+
+4. Click **{{< fa trash-can >}} Delete Group** to remove it.
+
+   After you confirm, the group will be permanently removed.
+
+## Add or remove group members
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under User Permissions in the sidebar, select **Groups**. 
+
+#### To add a member to a group:
+
+1. Click **{{< fa chevron-right >}} See Details**.
+
+2. Click **{{< fa plus >}} Add New Member**.
+
+3. Select members by checking the boxes next to their names in the pop-up.
+
+4. Click **{{< fa plus >}} Add to Group**.
+
+   Confirm that the new member is added to the correct group.
+
+#### To remove a member from a group:
+
+1. Click **{{< fa chevron-right >}} See Details**.
+
+2. Select members to be removed from the group by checking the boxes next to their names.
+
+3. Click **{{< fa user-minus >}} Remove Member**.
+
+   After you confirm, the user will be removed from that group.
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Manage permissions](/guide/configuration/manage-permissions.qmd)

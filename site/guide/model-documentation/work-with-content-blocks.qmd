@@ -1,0 +1,118 @@
+---
+title: "Work with content blocks"
+date: last-modified
+---
+
+Make edits to your model documentation or validation reports by adding or removing content blocks directly in the online editor. 
+
+## What are content blocks? 
+
+Content blocks provide you with sections that are part of a template. You can think of these sections as an empty canvas that you fill in with text and test results. Multiple sections are joined to create a longer document with a table of contents that has different heading and subheading levels, such as "1.," "1.1.," and so on. 
+
+Types of content blocks: 
+
+Simple text block
+: Can be added anywhere on model documentation or validation reports and edited to include additional documentation in text format.
+
+Test-driven block
+: Can be added to display one of the supported test results collected by the {{< var vm.developer >}}.
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] The model you are documenting or validating is registered in the model inventory.[^1]
+- [x] You are a `Developer` or `Validator`, or assigned another role with sufficient permissions to perform the tasks in this guide.[^2]
+
+:::
+
+## Add content blocks
+
+{{< include /guide/model-documentation/_add-content-block.qmd >}}
+
+5. Click {{< fa square-plus >}} and then select one of the available options: 
+    
+    - **Text Block** — Adds a new section with a blank content block. After the new content block has been added, click {{< fa pencil >}} to edit the contents of the section like any other.
+    - **Test-Driven Block**[^3] — Adds a new section with test results. 
+
+6. After adding the block to your documentation, click on the text to make changes or add comments.[^4]
+
+<!--- TO DO We might need to revisit terminology: we talk about "block", "section", and "module", but they all seem to be names for very similar things.--->
+### Add mathematical formulas
+
+While editing a simple text block, you can insert math equations using the editor:
+
+1. Click **√** in the toolbar while editing a content block.
+
+2. You can use the interface to type out the equation, or paste in a LaTeX formula:
+
+![](mathtype-full-demo.gif){width=100% fig-alt="An animation that shows how to insert a mathematical formula using LaTex within a simple text block"}
+
+3. Click **Insert** to add the equation to your content block.
+
+::: {.content-hidden when-format="html"}
+
+<!-- As per Nik on PR#233 (https://github.com/validmind/documentation/pull/233) we are hiding this content until we are sure we want to expose the documentation surrounding the Story to users.  When it's ready to be revealed, simply remove this comment and the `.content-hidden` block it's wrapped in. -->
+
+### Generate with AI (BETA)
+
+While editing a simple text block, you can have ValidMind assist you with generating content:
+
+1. Click **{{< fa diamond >}} BETA** in the toolbar while editing a content block.
+
+2. The ValidMind AI Content Builder will generate a draft for your review:
+
+   - Click **{{< fa download >}} Accept Text** to insert the draft into your content block.
+   - Click **{{< fa rotate >}} Try Again** to regenerate a different draft.
+   - Click **Cancel** to discard the draft and return to your documentation section. 
+
+![](generate-with-ai.gif){width=100% fig-alt="An animation that showcases the Generate with AI feature within a simple text block"}
+
+:::
+
+## Remove content blocks
+
+1. In the left sidebar, click **Model Inventory**.
+
+2. Select a model by clicking on it or find your model by applying a filter or searching for it.[^5]
+
+3. In the left sidebar that appears for your model, click **Documentation** or **Validation Report**.
+
+   You can now jump to any section of the model documentation or validation report by expanding the table of contents on the left and selecting the relevant section, such as **1.1 Model Overview**. 
+
+4. Select the block you wish to remove from the model documentation.
+
+5. Click on {{< fa trash-can >}} located in either one of these locations:
+
+   - In the toolbar for text blocks
+   
+   ![](remove-text-block.gif){fig-alt="A gif showing the process of deleting a content block via the text toolbar"}
+
+   - In the single-button toolbar for the test-driven block
+
+   ![](remove-test-driven-block.gif){fig-alt="A gif showing the process of deleting a content block via the single-button toolbar for test-driven blocks"}
+
+
+- After you have completed these steps, the content block is removed. 
+- Test-driven blocks can be re-added later on but **text blocks are currently deleted permanently**.
+
+## What's next
+
+- [Register models in the inventory](/guide/model-inventory/register-models-in-inventory.qmd)
+- [Working with model documentation](working-with-model-documentation.qmd)
+- [Preparing validation reports](/guide/model-validation/preparing-validation-reports.qmd)
+- [View model activity](/guide/model-inventory/view-model-activity.qmd)
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Register models in the inventory](/guide/model-inventory/register-models-in-inventory.qmd)
+
+[^2]: [Manage permissions](/guide/configuration/manage-permissions.qmd)
+
+[^3]: [Work with test results](/developer/model-documentation/work-with-test-results.qmd)
+
+[^4]: [Collaborate with others](/guide/model-documentation/collaborate-with-others.qmd)
+
+[^5]: [Working with the model inventory](/guide/model-inventory/working-with-model-inventory.qmd#search-filter-and-sort-models)

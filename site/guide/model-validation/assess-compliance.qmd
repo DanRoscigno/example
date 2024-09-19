@@ -1,0 +1,51 @@
+---
+title: "Assess compliance"
+date: last-modified
+---
+
+Use the {{< var vm.platform >}} to assess compliance of your models with guidelines based on analyzing evidence and findings.
+
+Compliance assessments provide an unbiased starting point that enables more efficient discussions between validators and developers and involves three steps:
+
+1. [Link evidence to reports](#link-evidence-to-reports)
+2. [Link findings to reports](#link-findings-to-reports)
+3. [Provide compliance assessments](#provide-compliance-assessments)
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] The model you are documenting is registered in the model inventory.[^1]
+- [x] A model developer has marked their model documentation as **Ready for Validation**.[^2]
+- [x] You are a `Validator` or assigned another role with sufficient permissions to perform the tasks in this guide.[^3] 
+
+:::
+
+## Link evidence to reports
+
+{{< include _assess-compliance-link-evidence.qmd >}}
+
+## Link findings to reports
+
+{{< include _assess-compliance-link-finding.qmd >}}
+
+## Provide compliance assessments
+
+{{< include _assess-compliance-assess.qmd >}}
+
+## What's next
+
+- [Collaborate with others](/guide/model-documentation/collaborate-with-others.qmd)
+- [Working with model findings](working-with-model-findings.qmd)
+- [Assign section statuses](/guide/model-documentation/assign-documentation-section-statuses.qmd)
+- [View model activity](/guide/model-inventory/view-model-activity.qmd)
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Register models in the inventory](/guide/model-inventory/register-models-in-inventory.qmd)
+
+[^2]: [Submit for approval](/guide/model-documentation/submit-for-approval.qmd)
+
+[^3]: [Manage permissions](/guide/configuration/manage-permissions.qmd)

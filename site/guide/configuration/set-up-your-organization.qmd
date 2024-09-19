@@ -1,0 +1,58 @@
+---
+title: "Set up your organization"
+date: last-modified
+---
+
+This task involves managing organizations within ValidMind, allowing for effective business unit control.
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] You are a `Customer Admin` or assigned another role with sufficient permissions to perform the tasks in this guide.[^1] 
+
+:::
+
+## Manage business units
+
+{{< include _business-units.qmd >}}
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+1. Under Workplace Settings, select **{{< fa building-columns >}} Organization**.
+
+1. Add, edit and delete business units as required.
+
+{{< include _set-up-your-organization-business-units.qmd >}}
+
+## Manage use cases
+
+{{< include _use-cases.qmd >}}
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+1. Under Workplace Settings, select **{{< fa building-columns >}} Organization**.
+
+1. Add or and delete use cases as required.
+
+{{< include _set-up-your-organization-use-cases.qmd >}}
+
+## Manage risk areas
+
+{{< include _risk-areas.qmd >}}
+
+::: {.callout title="Risk areas are set up together with your validation guidelines attached to validation reports."}
+[Set up validation guidelines {{< fa hand-point-right >}}](/guide/model-validation/manage-validation-guidelines.qmd#set-up-validation-guidelines)
+:::
+
+## What's next
+
+- [Managing users](managing-users.qmd)
+- [Personalize ValidMind](personalize-validmind.qmd)
+- [Manage validation guidelines](/guide/model-validation/manage-validation-guidelines.qmd)
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Manage permissions](/guide/configuration/manage-permissions.qmd)

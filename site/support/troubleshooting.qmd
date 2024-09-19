@@ -1,0 +1,42 @@
+---
+title: "Troubleshooting"
+date: last-modified
+---
+
+Learn how to resolve commonly encountered issues with the {{< var vm.developer >}}.
+
+## Cannot install the {{< var validmind.developer >}}
+
+#### Issue
+You cannot run `pip install validmind` or `import validmind as vm` in the {{< var validmind.developer >}} notebooks.
+
+#### Fix
+Make sure you are installing the latest version of the {{< var vm.developer >}} by running this command:
+
+```python
+%pip install --upgrade validmind
+```
+
+## Cannot initialize ValidMind client library
+
+#### Issue
+When you run `vm.init()`, you encounter an error message like this: 
+
+```bash
+MissingAPICredentialsError: API key and secret must be provided either as environment variables or as arguments to init.
+```
+
+or
+
+```bash
+InvalidProjectError: Invalid project ID. Please ensure that you have provided a project ID that belongs to your organization.
+```
+
+#### Fix
+Make sure that you are using the correct initialization credentials for the model you are trying to connect to. 
+
+Follow the steps in [Install and initialize the client library](/developer/model-documentation/install-and-initialize-client-library.qmd) for detailed instructions on how to integrate the {{< var vm.developer >}} and upload to the {{< var vm.platform >}}.
+
+## Additional resources
+
+Check out our [FAQ](/faq/faq.qmd) page to browse through common questions, or [contact our support team](support.qmd) for more help troubleshooting technical issues.

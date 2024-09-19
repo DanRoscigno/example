@@ -1,0 +1,53 @@
+---
+title: "Customize model inventory layout"
+date: last-modified
+---
+
+Configure the information that displays on the model inventory, and swap between inventory views. 
+
+:::{.callout}
+Changes are automatically saved to your account and do not affect other users.
+:::
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] There are models registered in the model inventory.[^1]
+
+:::
+
+## Steps
+
+1. In the left sidebar, click **Model Inventory**.
+
+2. Click **{{< fa table >}} Manage Columns** to manage column visibility and order. To use this feature, make sure you're in table view.[^2]
+
+   You can toggle visibility for each item and drag each option to change the order:
+
+   ![Manage Columns in the model inventory](manage-columns-demo.gif){width=80% fig-alt="An animation that shows how to manage columns in the model inventory"}
+
+- Available columns are determined by your model inventory fields.[^3] 
+- For example, to add model stage to your table view, toggle [stage]{.smallcaps}.[^4]
+
+#### Inventory display views
+
+- To display the inventory in table view, click **{{< fa table >}} Display Table**. 
+- To display the inventory in card view, click **Display Cards**.
+
+## What's next
+
+- [Register models in the inventory](register-models-in-inventory.qmd)
+- [Manage model inventory fields](manage-model-inventory-fields.qmd)
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Register models in the inventory](register-models-in-inventory.qmd)
+
+[^2]: [Inventory display views](#inventory-display-views)
+
+[^3]: [Manage model inventory fields](manage-model-inventory-fields.qmd)
+
+[^4]: [Archive and delete models](archive-delete-models.qmd)

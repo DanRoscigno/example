@@ -1,0 +1,403 @@
+---
+title: "Conventions"
+date: last-modified
+filters:
+  - tachyons
+---
+
+A message can only make an impact when it is received, so presentation is (almost) everything.
+
+## Comprehensive assistance
+Conveying knowledge and empowering users starts in the product interface. While external documentation can be helpful for supporting advanced functionality, users should not be lost on the basics without further reading. 
+
+- **Make it interactive.** Embedded user tutorials should exist whenever possible, and be intuitive and not obstructive. 
+- **Show only what’s necessary when necessary.** Progressive disclosure[^1] can help guide workflows as well as minimize visual clutter. 
+
+## American English
+While the ValidMind community spans far and wide, its heart finds its home in Palo Alto, California. When writing for ValidMind, keep things consistent by using American English[^2] spelling and grammar conventions. 
+
+| Correct | Incorrect | 
+|------|-----|
+|   At the center of this page, you will see the elements organized from most recent to least recent by default.  |  At the centre of this page, you will see the elements organised from most recent to least recent by default.  |
+: **American English** examples {.hover}
+
+## Titles
+- Task titles should always start with a verb and nouns should be in the plural if they describe an object acted on. 
+- For tasks that have child topic tasks, the starting verb should always be a gerund ("-ing").
+- Reference titles should include only the name of the content described unless it emcompasses a broader range of topics, in which case the title should end in "reference".
+
+| Correct | Incorrect | 
+|------|-----|
+|   Register models in the inventory  |  Inventory model registration  |
+|   Working with the model inventory  |  Use the model inventory  |
+|   Developer reference  |  Articles for developers  |
+: **Titles** examples {.hover}
+
+## Formatting
+
+### Sentence case
+In general, follow sentence-style capitalization[^3] to minimize the confusion of when to capitalize and when not to capitalize. 
+
+- Exceptions include referencing specific elements in the user interface (UI) that have their own casing to ensure that documentation matches the user experience, or when generating titles of publications such as blog posts.
+- For UI elements that are in all caps, use the markdown [smallcaps]{.smallcaps} class to display these elements.
+
+| Correct | Incorrect | 
+|------|-----|
+|   Get started with ValidMind  |  Get Started with ValidMind  |
+|  In the left sidebar, click **Model Inventory**.  |  In the left sidebar, click **model inventory**.  |
+|   [Honor the Human with ValidMind](https://validmind.com/honor-the-human-with-validmind/)  |  [Honor the human with ValidMind](https://validmind.com/honor-the-human-with-validmind/)  |
+|   `On the landing page of your model, locate the [model status]{.smallcaps} section:`   |  `On the landing page of your model, locate the MODEL STATUS section:`   |
+: **Sentence case** examples {.hover}
+
+### Headings
+- **Make them imperative!** Individual task headings are a call to action. Gerunds (“-ing”) are acceptable when introducing a set of instructions with individual tasks.  
+- **Avoid numbered headings.** Most headers do not require numbering, as order can be discerned from context. Numbering headers can make it difficult to shift information around when information changes.  
+- **Don’t use terminal punctuation.** While headings should be in sentence case, they are not sentences. 
+
+| Correct | Incorrect | 
+|------|-----|
+|   Login to ValidMind  |  1. Logging into ValidMind.  |
+: **Heading** examples {.hover}
+
+### Responsive columns
+
+To make sure our docs site works well on mobile, we use Tachyons CSS[^4] with flexbox. Quarto's default support for CSS Grid is not responsive and should not be used.
+
+Enable Tachyons CSS in the front matter  with:
+
+```yaml
+filters:
+    - tachyons
+```
+
+:::: {.flex .flex-wrap .justify-around}
+
+::: {.w-50-ns}
+**Correct:**  
+
+```markdown
+:::: {.flex .flex-wrap .justify-around}
+
+::: {.w-50-ns}
+Column 1, 50% wide
+:::
+
+::: {.w-50-ns}
+Column 2, 50% wide
+:::
+
+::::
+```
+:::
+
+::: {.w-10-ns}
+:::
+
+::: {.w-40-ns}
+**Incorrect:**
+
+```markdown
+::: {.grid}
+
+::: {.g-col-6}
+Column 1, 50% wide
+:::
+
+::: {.g-col-6}
+Column 2, 50% wide
+:::
+
+:::
+```
+:::
+
+::::
+
+
+### Inline links
+
+- Keep hyperlinks in instructional text minimal — too many links can misdirect the user from the task at hand. 
+- When possible — such as any time instructions are not single-sourced — instead of multiple inline links, make use of margin footnotes.[^5]
+- Whenever possible, make the link the title of the destination article. This also solves the issue of links with nebulous descriptions that do not match article titles, or links whose destinations are not clear to the user such as "Read more." 
+
+#### Margin footnotes
+
+- Other than in single-sourced files, number all footnotes and place the footnotes at the very end of the page:
+
+    ```markdown
+    <!-- IN THE BODY OF YOUR CONTENT -->
+    - The model is registered in the model inventory.[^1]
+    - You've already customized your model lifecycle statuses for use in workflows.[^2]
+    - Workflows have already been set up for use with your models.[^3]
+    - You are assigned a role that has access to complete actions set up by workflows.[^5]
+
+    <!-- AT THE END OF YOUR .QMD PAGE -->
+    <!-- FOOTNOTES -->
+    [^1]: [Register models in the inventory](/guide/model-inventory/register-models-in-inventory.qmd)
+
+    [^2]: [Customize model lifecycle statuses](customize-model-lifecycle-statuses.qmd)
+
+    [^3]: [Working with model workflows](set-up-model-workflows.qmd)
+
+    [^5]: [Manage permissions](/guide/configuration/manage-permissions.qmd)
+    ```
+
+- In single-source files, either place the link inline for training materials formatted in `revealjs`,[^6] or use an embedded footnote for our normal user guides. 
+  
+  You can use Quarto's ability to display conditional content[^7] to do both in the same file:
+
+  ```markdown
+  To view model activity:
+
+  <!-- EMBEDDED FOOTNOTES FOR STANDARD USER GUIDES -->
+  :::: {.content-visible unless-format="revealjs"}
+  1. In the left sidebar, click **Model Inventory**.
+
+  1. Select a model by clicking on it or find your model by applying a filter or searching for it.^[[Working with the model inventory](/guide/model-inventory/working-with-model-inventory.qmd#search-filter-and-sort-models)]
+
+  1. In the expanded sidebar that appears for your model, click **Model Activity**.
+
+  ::::
+
+  <!-- INLINE LINKS FOR REVEALJS TRAINING -->
+  :::: {.content-hidden unless-format="revealjs"}
+  1. In the left sidebar, click **Model Inventory**.
+
+  1. Select a model by clicking on it or [find your model by applying a filter or searching for it](/guide/model-inventory/working-with-model-inventory.qmd#search-filter-and-sort-models).
+
+  1. In the expanded sidebar that appears for your model, click **Model Activity**.
+  ::::
+  ```
+  | Inline links in training | Footnotes in user guides | 
+  |------|-----|
+  | ![](training_inline-links.png){fig-alt="A screenshot showing an example of inline links in training materials"} | ![](user-guide_footenotes.png){fig-alt="A screenshot showing an example of margin footnotes in a user guide"} |
+  : **Inline vs footnotes links** examples {.hover}
+
+Footnotes will automatically appear in the correct location in the margin, regardless of their origin or format.
+
+| Correct | Incorrect | 
+|------|-----|
+| ![](margin-footnotes_correct.png){fig-alt="A screenshot showing a correct example of footnote links automatically placed in the margin"} | ![](inline-links_incorrect.png){fig-alt="A screenshot showing an incorrect example of supplementary links in inline instructional text"} |
+: **Margin footnotes** examples {.hover}
+
+### Emphasis
+Use emphatic styling sparingly, in order not to overwhelm the reader with visual distractions.
+
+- **Bolding** — Some light bolding can be helpful to draw attention to core concepts. Bolding is also used to highlight UI elements that the user can interact with, such as links or buttons.
+- **Italics** — Italics should not be used for emphasis, only for first uses of terms on the page to set the stage. 
+- **Quotation marks** — Quotation marks should generally only be employed for quoting speech. 
+
+| Correct | Incorrect | 
+|------|-----|
+|   At ValidMind, we value **transparency and accessibility** — we aim to speak simply and effectively. (e.g. Highlighting the important concept within a sentence.)  |  **At ValidMind, we value transparency and accessibility — we aim to speak simply and effectively.** (e.g. Highlighting the entire sentence.)   |
+|   In the {{< var validmind.platform >}}, click **Model Inventory** on the left sidebar.  | In the {{< var validmind.platform >}}, click "Model Inventory" on the left sidebar. |
+|   *Uncertainty* can be summed up as the difference between reality and the outputs from the model selected to approximate reality.   |  “Uncertainty” can be summed up as the difference between reality and the outputs from the model selected to approximate reality.   |
+|   “ValidMind is the only platform today that is purpose-built for model risk management professionals in the banking industry,” Jacobi says. | At ValidMind, we value "transparency and accessibility" — we aim to speak simply and effectively. |
+: **Emphasis** examples {.hover}
+
+#### Callouts
+We use two types of callouts[^8] to call attention to supplementary information or issue warnings:
+
+:::: {.flex .flex-wrap .justify-around}
+
+::: {.w-40-ns}
+
+::: {.callout title="`.callout`"}
+For supplemental information. Notes and tips should follow this formatting.
+:::
+
+:::
+
+::: {.w-50-ns}
+
+::: {.callout-important title="`.callout-important`"}
+For warnings and caveats. Warnings, important information, and cautions should follow this format.
+:::
+
+:::
+
+::::
+
+
+| Correct | Incorrect | 
+|------|-----|
+| `::: {.callout title="Example note or tip"}` | `::: {.callout-note title="Incorrect note"}` |
+| `::: {.callout-important title="Example warning, important, or caution"}` | `::: {.callout-warning title="Incorrect warning"}` |
+: **Callouts** examples {.hover}
+
+### Content types
+
+#### Filenames
+Filenames should generally match the title of the article[^9] or concisely summarize the content, and be descriptive but not overly lengthy. 
+
+- Filenames for concepts should generally only be made up of nouns and end in `-overview` if they introduce a product area.
+- Do not include extraneous keywords. 
+- A good filename makes the contents obvious!
+
+| Correct | Incorrect | 
+|------|-----|
+|   `style-guide.qmd`  |  `style-guide-technical-writing.qmd` | 
+|   `example-model-workflow.png` |  `customize-workflow-mrm-governance.png`  |
+|   `model-documentation-overview.qmd` |  `automated-testing-and-documentation.qmd`  |
+| `model-lifecycle.gif` | `img4.gif`|
+: **Filenames** examples {.hover}
+
+#### Code
+- Format code in its own code block.[^10]
+- Declare the code language within the pre-formatted block to properly trigger syntax highlighting.
+
+Within a Jupyter Notebook, simply use a **code cell**[^11] rather than a markdown cell.
+
+> **Correct**:
+>```python
+>%pip install -q validmind
+>```
+
+| **Incorrect:** 
+|       Using Python, call `%pip install -q validmind`. 
+
+#### Parameters, values, and files
+Use backticks to enclose keyboard commands, parameters, field values, and file names/extensions.
+
+| Correct | Incorrect | 
+|------|-----|
+|   Learn how to store project identifier credentials in a `.env` file instead of using inline credentials.  |  Learn how to store project identifier credentials in a ".env" file instead of using inline credentials.  |
+|   For example, the `classifier_full_suite` test suite runs tests from the `tabular_dataset` and `classifier` test suites to fully document the data and model sections for binary classification model use cases. |  For example, the "classifier_full_suite" test suite runs tests from the "tabular_dataset" and "classifier" test suites to fully document the data and model sections for binary classification model use cases.  |
+| Under When these conditions are met, you are able to set both `AND` and `OR` conditions. | Under When these conditions are met, you are able to set both "AND" and "OR" conditions.|
+: **Backtick** examples {.hover}
+
+#### Mathematics
+- Mathematical formulas should be rendered using LaTeX formatting.[^12] 
+- On our WordPress blog posts, this is taken care of by the WP Quick LaTeX plugin.[^13]
+
+| Correct | Incorrect | 
+|------|-----|
+|   $likes \sim Binomial(n_{feedbacks},p_{like})$  |  `$likes \sim Binomial(n_{feedbacks},p_{like})$`  |
+: **Mathematical formula** examples {.hover}
+
+## Proper nouns
+In the context of model risk management, proper nouns include specific models, laws, or regulations, such as "Basel IV" or "SR 11-7." These refer to specific frameworks or guidelines and you spell them with initial capital letters or exactly as indicated by official sources.
+
+- Terms that are not proper nouns include general concepts such as "model validation," "stress testing," "risk assessment," and "backtesting." 
+- These are common terms in the field and are not capitalized unless starting a sentence.
+
+| Correct | Incorrect | 
+|------|-----|
+|   SS1/23 – Model risk management principles for banks  |  Model Validation  |
+|   validation report  |  basel 4  |
+|   machine learning  |  Financial Services industry  |
+: **Proper noun** examples {.hover}
+
+## Product names
+Within our documentation (`https://docs.validmind.ai/`), you are able to reference constants such as the {{< var validmind.developer >}} and {{< var validmind.platform >}} via variables.[^14]
+
+- Use the variables shown on the table below instead of writing out the phrases to enable consistency between guides everywhere except for image alt text or Mermaid charts.[^15]
+- If product names need to be updated, simply amend the `_variables.yml` file[^16] to see changes reflected throughout all guides. 
+- Please note that variables will not work within any of the Jupyter Notebook code samples[^17] as these are technically standalone files.
+
+| Product Name | Variable Key | Description |
+|---:|---|---|
+| {{< var validmind.product >}} | `{{{< var validmind.product >}}}` | Risk platform with a {{< var vm.developer >}} for documenting and testing models, alongside a {{< var vm.platform >}} hosting cloud-based tools, APIs, databases, and validation engines. |
+| {{< var validmind.developer >}} |  `{{{< var validmind.developer >}}}` | Open-source suite of of tools that connects to the  {{< var vm.platform >}}. |
+| {{< var validmind.platform >}} |  `{{{< var validmind.platform >}}}` | Hosted multi-tenant architecture that includes a cloud-based web interface. |
+| {{< var vm.developer >}} |  `{{{< var vm.developer >}}}` | Short form of {{< var validmind.developer >}}. |
+| {{< var vm.platform >}} |  `{{{< var vm.platform >}}}` | Short form of {{< var validmind.platform >}}. |
+| {{< var url.us1 >}} | `{{{< var url.us1 >}}}` | One of the URLs of the {{< var validmind.platform >}}. |
+: ValidMind product **variable keys** {.hover tbl-colwidths="[25,35,40]"}
+
+::: {.callout}
+Refer also to [the glossary](/about/glossary/glossary.qmd) for extended information on product names. 
+:::
+
+## Training materials
+
+The ValidMind Academy is delivered in Revealjs presentation format,[^18] with a slightly different set of conventions:
+
+- It makes use of Tachyons CSS[^19] to provide demonstration overlays.
+
+  Enable Tachyons CSS in the front matter with:
+
+    ```yaml
+    filters:
+        - tachyons
+    ```
+
+  :::: {.flex .flex-wrap .justify-around}
+
+  ::: {.w-50-ns}
+
+  Example overlay box:
+
+  ```css
+  :::: {.fr .f3 .mv5 .nr4 .pa5 .bg-near-white .ba .b--dark-pink .bw1 .br3 .near-black .shadow-5}
+  From  **{{< fa gear >}} Settings** in the {{< var validmind.platform >}}, <br>you can: 
+      
+  - Set up your organization
+  - Onboard new users
+  - Manage roles, groups and <br>permissions
+  - Configure the model inventory
+  - Manage templates and workflows
+  - And much more! 
+
+  Try it **live** on the next page. {{< fa hand-point-right >}}
+  ::::
+  ```
+
+  :::
+
+  ::: {.w-50-ns}
+
+  ![](training-overlay.png){fig-alt="A screenshot showing an example of a training overlay"} 
+
+  :::
+
+  ::::
+
+
+- It uses inline links only instead of footnotes,[^20] as footnotes are not visible in presentation mode.
+
+## What's next
+- [Voice and tone](voice-and-tone.qmd)
+
+
+<!-- FOOTNOTES -->
+
+[^1]: **Wikipedia:** [Progressive disclosure](https://en.wikipedia.org/wiki/Progressive_disclosure)
+
+[^2]: **US Department of State:** [ American English](https://americanenglish.state.gov/)
+
+[^3]: **Microsoft:** [Capitalization](https://learn.microsoft.com/en-us/style-guide/capitalization)
+
+[^4]: **GitHub:** [Tachyons Extension For Quarto](https://github.com/nareal/tachyons)
+
+[^5]: **Quarto:** [Footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes)
+
+[^6]: [Training materials](#training-materials)
+
+[^7]: **Quarto:** [Conditional Content](https://quarto.org/docs/authoring/conditional.html)
+
+[^8]: **Quarto:** [Callout Blocks](https://quarto.org/docs/authoring/callouts.html)
+
+[^9]: [Titles](#titles)
+
+[^10]:  **Quarto:** [Source Code](https://quarto.org/docs/authoring/markdown-basics.html#source-code)
+
+[^11]: **Jupyter Notebooks:** [Code Cells](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#code-cells)
+
+[^12]: **Quarto:** [LaTeX Equations](https://quarto.org/docs/output-formats/html-basics.html#latex-equations)
+
+[^13]: **WordPress:** [WP QuickLaTeX](https://en-gb.wordpress.org/plugins/wp-quicklatex/)
+
+[^14]: **Quarto:** [Variables](https://quarto.org/docs/authoring/variables.html#var)
+
+[^15]: [Mermaid charts](https://mermaid.js.org/)
+
+[^16]: [`_variables.yml`](https://github.com/validmind/documentation/blob/main/site/_variables.yml) file
+
+[^17]: [Code samples](/developer/samples-jupyter-notebooks.qmd)
+
+[^18]: **Quarto:** [Revealjs](https://quarto.org/docs/presentations/revealjs/)
+
+[^19]: **GitHub:** [Tachyons Extension For Quarto](https://github.com/nareal/tachyons)
+
+[^20]: [Inline links](#inline-links)

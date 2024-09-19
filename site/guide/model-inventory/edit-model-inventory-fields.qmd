@@ -1,0 +1,41 @@
+---
+title: "Edit model inventory fields"
+date: last-modified
+---
+
+Edit individual detail fields on a model to ensure that model details are accurate and up-to-date.
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] The model is already registered in the model inventory.[^1]
+- [x] You are the model owner for the model you would like edit the details of, a `Customer Admin`, or assigned another role with sufficient permissions to perform the tasks in this guide.[^2]
+
+:::
+
+## Steps
+
+1. In the left sidebar, click **Model Inventory**. 
+
+2. Select a model by clicking on it or find your model by applying a filter or searching for it.[^3]
+
+3. Hover over a field until the **{{< fa pencil >}}** appears, then click to make your changes:  
+
+   - Click **Save** to apply your changes.
+   - Click **Cancel** to discard your changes.
+
+## What's next
+
+- [Register models in the inventory](register-models-in-inventory.qmd)
+- [Manage model inventory fields](manage-model-inventory-fields.qmd)
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Register models in the inventory](register-models-in-inventory.qmd)
+
+[^2]: [Manage permissions](/guide/configuration/manage-permissions.qmd)
+
+[^3]: [Working with the model inventory](/guide/model-inventory/working-with-model-inventory.qmd#search-filter-and-sort-models)

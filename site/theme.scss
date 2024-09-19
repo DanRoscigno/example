@@ -1,0 +1,34 @@
+/*-- scss:defaults --*/
+// Base ValidMind colors
+$body-color: #222425;
+$link-color: $body-color;
+
+$navbar-fg: #2e3133;
+$navbar-hl: #de257e;
+
+/*$sidebar-bg: #f8fafc;*/
+$sidebar-fg: $body-color;
+$sidebar-hl: #de257e;
+
+$toc-active-border: #de257e;
+
+$mermaid-fg-color: de257e;
+$mermaid-edge-color: #373a3c;
+$mermaid-node-bg-color: #f7e4ee;
+$mermaid-node-fg-color: #373a3c;
+$mermaid-fg-color--lighter: lighten($body-color, 30%);
+$mermaid-fg-color--lightest: lighten($body-color, 40%);
+$mermaid-label-bg-color: #f7e4ee;
+$mermaid-label-fg-color: #373a3c;
+
+.termsfeed-com---palette-light .cc-nb-okagree,
+.termsfeed-com---palette-light .cc-nb-reject,
+.termsfeed-com---palette-light .cc-cp-foot-save {
+  color: #fff;
+  background-color: #de257e;
+}
+
+.termsfeed-com---pc-dialog {
+  color: #111;
+  border-color: #de257e;
+}

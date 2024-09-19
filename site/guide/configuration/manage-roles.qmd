@@ -1,0 +1,45 @@
+---
+title: "Manage roles"
+---
+
+Roles are a named set of permissions that determine your users' access to features within the {{< var vm.platform >}} based on your organization's structure. Create and update roles, and verify that each role has appropriate access to the resources they need. 
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] You are a `Customer Admin` or assigned another role with sufficient permissions to perform the tasks in this guide.[^1] 
+
+:::
+
+## Add or update roles
+
+::: {.callout-important title="Role permissions and role assignments determines a user's level of access."}
+Please note that the `Customer Admin` role has the highest level of access and as such, it cannot be cannot be modified.
+:::
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+{{< include _manage-roles.qmd >}}
+
+### Rename existing roles
+
+To rename a role after it has been created:
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under User Permissions, select **{{< fa user-group >}} Roles**.
+
+3. Select the role you want to rename.
+
+4. On the role's detail view, click on the title of the role. 
+
+5. Type in the new name of the role.
+
+6.  Click **Save** to apply your changes.
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Manage permissions](/guide/configuration/manage-permissions.qmd)

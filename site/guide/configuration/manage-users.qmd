@@ -1,0 +1,62 @@
+---
+title: "Manage users"
+date: last-modified
+---
+
+Invite new users and review your current users from within the user directory. Users belong to groups which determine which models they can see, and have roles with attached permissions which define the level of access they have to features.
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] You are a `Customer Admin` or assigned another role with sufficient permissions to perform the tasks in this guide.[^1] 
+
+:::
+
+## User invitations
+
+### Invite new users
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+{{< include _manage-users-invite.qmd >}}
+
+### Monitor user invitations
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+1. Under User Permissions, click **{{< fa envelope >}} Invite New Users**.
+
+    {{< include _manage-users-monitor.qmd >}}
+
+## User roles
+
+### Assign new roles to a user
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under User Permissions, select **{{< fa book-open >}} User Directory**. 
+
+3. Next to any individual user, click the {{< fa circle-plus >}} icon to open the Assign Roles menu for that user. 
+
+4. Click **+** next to the role for each role to be assigned.  
+
+5. Click **{{< fa puzzle-piece >}} Assign Roles to User** to save changes.
+
+### Remove roles from a user
+
+1. In the left sidebar, click **{{< fa gear >}} Settings**. 
+
+2. Under User Permissions, select **{{< fa book-open >}} User Directory**. 
+
+3. Click the {{< fa xmark >}} next to the role for the user that you want to remove.
+
+    After you confirm, that role will be removed from the user.
+
+
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Manage permissions](/guide/configuration/manage-permissions.qmd)

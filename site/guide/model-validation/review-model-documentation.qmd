@@ -1,0 +1,61 @@
+---
+title: "Review model documentation"
+date: last-modified
+---
+
+Use the {{< var validmind.platform >}} to review the model documentation provided by a model developer as part of the formal validation process.
+
+::: {.prereq}
+
+## Prerequisites
+
+- [x] {{< var link.login >}}
+- [x] A model developer has submitted model documentation for review.[^1]
+- [x] You are a `Validator` or assigned another role with sufficient permissions to perform the tasks in this guide.[^2] 
+
+:::
+
+## Key concepts
+
+{{< include /about/glossary/validation_reports/_review.qmd >}}
+
+## Document Overview
+
+{{< include /guide/model-documentation/_model-documentation-overview.qmd >}}
+
+{{< include /guide/model-documentation/_review-model-documentation.qmd >}}
+
+#### Unresolved conversations
+Hover over **{{< fa comment-dots >}} # Unresolved conversations** to see a preview of the unresolved conversation associated with the documentation section.
+
+Resolve conversations directly from this popup, or click to expand the conversation.
+
+#### Model findings
+Hover over **{{< fa triangle-exclamation >}} # Model Findings** to see a preview of model findings associated with the documentation section.
+
+Click to expand the finding. 
+
+#### Completion status
+The **{{< fa check >}} #/# Done** indicator reflects the completion status of your documentation sections.
+
+### Recent activity
+At the bottom of the Document Overview page, you will also see quick view of any recent documentation activity. 
+
+Use the top tabs to narrow down the recent activity.
+
+<!-- Below was removed as of Sept 17, 2024 -->
+
+<!-- Click on **{{< fa eye >}} See all Activity** to be taken to the **Model Activity** page. -->
+
+## What's next
+- [Collaborate with others](/guide/model-documentation/collaborate-with-others.qmd)
+- [Working with model findings](working-with-model-findings.qmd)
+- [Assign section statuses](/guide/model-documentation/assign-documentation-section-statuses.qmd)
+- [View model activity](/guide/model-inventory/view-model-activity.qmd)
+
+
+<!-- FOOTNOTES -->
+
+[^1]: [Submit for approval](/guide/model-documentation/submit-for-approval.qmd)
+
+[^2]: [Manage permissions](/guide/configuration/manage-permissions.qmd)
